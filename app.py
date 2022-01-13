@@ -331,9 +331,41 @@ move(city="San Francisco", name="Mark", state="California")
 move("John", state="New York", city="New York") #name is first..
 
 
-def test_function(language, person="Devyn"):
+def first_function(language, person="Devyn"):
     message = "{} is making his first {} function"
     message = message.format(person,language)
     print (message)
 
-test_function("python")
+first_function("python")
+
+def get_cities(students):
+    '''Return a [list] of all cities from the students [list] '''
+    # TODO Make a empty list
+    # TODO Iterate through the list of student
+    # TODO Append each city in the dict to empty list
+    # TODO return the lisy
+
+    result = []
+
+    for s in students:
+        print(s)
+        if s.get("city"):
+            print(s.get("city"))
+            result.append(s.get('city'))
+
+    return result
+
+print('Cities List:' ,get_cities(students))
+
+
+def get_names(studnets):
+    name_results = []
+
+    for s in students:
+        print(s)
+        if s.get("name"):
+            #print(s.get("name"))
+            name_results.append(s.get("name"))
+    return name_results
+
+print('Name List:', get_names(students))
