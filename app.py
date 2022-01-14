@@ -367,7 +367,6 @@ def get_cities(students):
     # TODO Iterate through the list of student
     # TODO Append each city in the dict to empty list
     # TODO return the lisy
-
     result = []
 
     for s in students:
@@ -389,6 +388,41 @@ def get_names(students):
         if s.get("name"):
             #print(s.get("name"))
             name_results.append(s.get("name"))
+
     return name_results
 
 print('Name List:', get_names(students))
+
+
+def parse_by_cities(students):
+    '''
+    Return a dict that has a key for each cities and 
+    a list of students for each city
+    '''
+    # TODO make a empty dict
+    # TODO Iterate through the list of students and perform
+        #if city is not in dict
+            #add the city and set that to an empty list
+        #logic -> if the city is in the dict
+            # append student name to list 
+    # TODO return the dict
+
+    result = {}
+
+    for student in students:
+        print('PRINTING INSIDE', student)
+        if student.get('city'):
+            if not result.get(student.get('city')):
+                print('Does not exist')
+                result[student.get('city')] = [] 
+                city_list = result[student.get('city')]
+                city_list.append(student.get('name'))
+
+            else: 
+                print('Does exist....')
+                city_list = result[student.get('city')]
+                city_list.append(student.get('name'))
+    print('---------------')
+    return result #gets printed when you run the function and wrap 
+
+print('PRINTING OUTSIDE ', parse_by_cities(students))
